@@ -1,0 +1,22 @@
+
+.header {
+
+    @media (width >= 1200px) {
+        height: var(--height-header);
+    }
+
+    @media (width >= 768px) {
+        height: var(--height-header-s);
+    }
+}
+
+.header-title {
+    text-transform: uppercase;
+    /* margin-left: 2rem; */
+}
+
+.logo-container {
+    width: min(60vw, 170px);
+    height: auto;
+    padding-top: 3px;
+}

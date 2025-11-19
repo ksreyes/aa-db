@@ -1,0 +1,14 @@
+{
+    "1": {
+        "label": "Drought"
+    },
+    "2": {
+        "label": "Flood"
+    },
+    "3": {
+        "label": "Storm"
+    },
+    "4": {
+        "label": "Wildfire"
+    }
+}
