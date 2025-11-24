@@ -37,7 +37,6 @@ export default function RasterOverlay({ filters }) {
                     p.lead === Number(filters.lead)
             );
         }
-
         
         let filteredPoints = filterPoints(points);
         if (filteredPoints.length === 0) return;
