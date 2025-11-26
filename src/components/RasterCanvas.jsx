@@ -1,20 +1,44 @@
+import computeGridResolution from './GridResolution.jsx';
+import countryData from "../countryData.json";
 
-export default function createRasterCanvas(points, options = {}) {
+export default function createRasterCanvas(points, filters) {
 
-    const {
-        width = 800,
-        height = 800,
-        colorMap = (v) => `rgba(${255 - v * 20}, 0, ${v * 20}, 0.7)`,
-        filters
-    } = options;
+    const country = Number(filters.country);
+    const indicator = Number(filters.indicator);
+    const lead = Number(filters.lead);
+    const countryBounds = countryData[country].bounds;
+    const [[minLat, minLon], [maxLat, maxLon]] = countryBounds;
 
-    // Extract bounding box
-    const lats = points.map(p => p.lat);
-    const lons = points.map(p => p.lon);
-    const minLat = Math.min(...lats);
-    const maxLat = Math.max(...lats);
-    const minLon = Math.min(...lons);
-    const maxLon = Math.max(...lons);
+    // Compute grid resolution
+    const checkPoints = points.filter(p => p.indicator === indicator);
+    const resAxis = computeGridResolution(checkPoints, { method: 'axis' });
+    const latSpacingDeg = resAxis.latSpacingDeg;
+
+    function filterPoints(points) {
+        return points.filter(
+            p => p.admin0 === country && 
+                p.indicator === indicator &&
+                p.lead === lead
+        );
+    }
+
+    let filteredPoints = filterPoints(points);
+    if (filteredPoints.length === 0) return;
+
+    // Compute canvas size from country bounding box
+    const EARTH_RADIUS = 6371; // km
+
+    // Height (north–south): 1° lat = 111 km approx
+    const heightKm = (maxLat - minLat) * 111;
+
+    // Width (east–west): 1° lon = 111 km * cos(latitude)
+    const midLat = (minLat + maxLat) / 2;
+    const widthKm = (maxLon - minLon) * 111 * Math.cos(midLat * Math.PI / 180);
+
+    const aspectRatio = heightKm / widthKm;
+    const baseWidth = 800;
+    const width = baseWidth;
+    const height = Math.round(baseWidth * aspectRatio);
 
     // Create canvas
     const canvas = document.createElement("canvas");
@@ -22,14 +46,20 @@ export default function createRasterCanvas(points, options = {}) {
     canvas.height = height;
     const ctx = canvas.getContext("2d");
 
-    // Draw each point
-    const rectSize = filters.indicator === 2 ? 4 : 19.5;
-    points.forEach(p => {
+    // Compute cell size in pixels
+    const cellWidth  = width / ((maxLon - minLon) / latSpacingDeg);
+    const cellHeight = height / ((maxLat - minLat) / latSpacingDeg);
+
+    function colorMap(v) {
+        return `rgba(${255 - v * 20}, 0, ${v * 20}, 0.7)`;
+    }
+
+    filteredPoints.forEach(p => {
         const x = ((p.lon - minLon) / (maxLon - minLon)) * width;
         const y = height - ((p.lat - minLat) / (maxLat - minLat)) * height;
 
         ctx.fillStyle = colorMap(Number(p.v));
-        ctx.fillRect(x, y, rectSize, rectSize + 3);
+        ctx.fillRect(x, y, cellWidth, cellHeight);
     });
 
     return {
