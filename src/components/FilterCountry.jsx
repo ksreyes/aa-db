@@ -6,6 +6,7 @@ export default function FilterCountry({ filters, setFilters }) {
         setFilters((prevFilters) => ({
             ...prevFilters,
             country: event.target.value,
+            lead: 1
         }));
     };
 

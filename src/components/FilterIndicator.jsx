@@ -6,6 +6,7 @@ function FilterIndicator({ filters, setFilters }) {
         setFilters((prevFilters) => ({
             ...prevFilters,
             indicator: +event.target.value,
+            lead: 1
         }));
     };
 
