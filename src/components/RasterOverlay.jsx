@@ -3,7 +3,6 @@ import L from 'leaflet';
 import { useMap } from 'react-leaflet';
 import Papa from 'papaparse';
 import createRasterCanvas from './RasterCanvas.jsx';
-// import countryData from "../countryData.json";
 
 export default function RasterOverlay({ filters }) {
 
