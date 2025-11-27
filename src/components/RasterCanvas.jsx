@@ -36,7 +36,7 @@ export default function createRasterCanvas(points, filters) {
     const widthKm = (maxLon - minLon) * 111 * Math.cos(midLat * Math.PI / 180);
 
     const aspectRatio = heightKm / widthKm;
-    const baseWidth = 800;
+    const baseWidth = 1200;
     const width = baseWidth;
     const height = Math.round(baseWidth * aspectRatio);
 
@@ -50,15 +50,27 @@ export default function createRasterCanvas(points, filters) {
     const cellWidth  = width / ((maxLon - minLon) / latSpacingDeg);
     const cellHeight = height / ((maxLat - minLat) / latSpacingDeg);
 
-    function colorMap(v) {
-        return `rgba(${255 - v * 20}, 0, ${v * 20}, 0.7)`;
+    const fills = {
+        1: "hsla(40, 100%, 90%, 0.50)",
+        2: "hsla(31, 100%, 78%, 0.50)",
+        3: "hsla(12, 100%, 72%, 0.50)",
+        4: "hsla(15, 100%, 62%, 0.60)",
+        5: "hsla(351, 80%, 60%, 0.60)",
+        6: "hsla(357, 69%, 49%, 0.70)",
+        7: "hsla(357, 69%, 49%, 0.75)",
+        8: "hsla(357, 69%, 49%, 0.80)",
+        9: "hsla(357, 69%, 40%, 0.85)"
+    };
+
+    function fillMap(v) {
+        return fills[v] || "rgba(0,0,0,0)";
     }
 
     filteredPoints.forEach(p => {
         const x = ((p.lon - minLon) / (maxLon - minLon)) * width;
         const y = height - ((p.lat - minLat) / (maxLat - minLat)) * height;
 
-        ctx.fillStyle = colorMap(Number(p.v));
+        ctx.fillStyle = fillMap(Number(p.v));
         ctx.fillRect(x, y, cellWidth, cellHeight);
     });
 
