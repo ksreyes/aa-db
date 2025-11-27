@@ -1,6 +1,7 @@
 import FilterCountry from './FilterCountry.jsx';
 import FilterIndicator from './FilterIndicator.jsx';
 import FilterLead from './FilterLead.jsx';
+import FilterBubbles from './FilterBubbles.jsx';
 import './Filters.css';
 
 function Filters({ filters, setFilters }) {
@@ -15,6 +16,7 @@ function Filters({ filters, setFilters }) {
                 <FilterCountry filters={filters} setFilters={setFilters} />
                 <FilterIndicator filters={filters} setFilters={setFilters} />
                 <FilterLead filters={filters} setFilters={setFilters} />
+                <FilterBubbles filters={filters} setFilters={setFilters} />
             </div>
 
             

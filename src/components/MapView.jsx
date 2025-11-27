@@ -1,6 +1,7 @@
 // import { useEffect, useState } from 'react';
 import { MapContainer, TileLayer } from 'react-leaflet';
 import RasterOverlay from './RasterOverlay.jsx';
+import BubbleOverlay from './BubbleOverlay.jsx';
 import MapCenter from './MapCenter.jsx';
 import 'leaflet/dist/leaflet.css';
 import './MapView.css';
@@ -23,6 +24,7 @@ export default function MapView({ filters }) {
 
                 <RasterOverlay filters={filters} />
                 <MapCenter filters={filters} />
+                <BubbleOverlay filters={filters} />
 
             </MapContainer>
         </div>

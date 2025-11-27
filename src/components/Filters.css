@@ -24,3 +24,21 @@
     font-weight: normal;
     text-transform: uppercase;
 }
+
+.bubble-filter {
+    display: flex;
+    flex-direction: row;
+
+    & .filter-label {
+        width: 5.5em;
+    }
+
+    & .filter-items {
+        display: flex;
+        flex-direction: column;
+    }
+
+    & input {
+        margin-right: 5px;
+    }
+}
