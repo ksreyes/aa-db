@@ -16,9 +16,9 @@ function Header() {
                     Anticipatory Action Dashboard
                 </h1>
             </div>
-            <div 
-                className="flex-row items-center pad-x-5 mgn-r-5 text-blue text-upper"
-            >About
+            <div className="flex-row items-center pad-x-5 mgn-r-5 text-blue text-upper">
+                <div className="link">Customise trigger</div>
+                <div className="link">About</div>
             </div>
         </header>
     )
