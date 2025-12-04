@@ -3,6 +3,7 @@ import FilterIndicator from './FilterIndicator.jsx';
 import FilterLead from './FilterLead.jsx';
 import FilterBubbles from './FilterBubbles.jsx';
 import './Filters.css';
+import FilterVulnerability from './FilterVulnerability.jsx';
 
 function Filters({ filters, setFilters }) {
     return (
@@ -17,6 +18,7 @@ function Filters({ filters, setFilters }) {
                 <FilterIndicator filters={filters} setFilters={setFilters} />
                 <FilterLead filters={filters} setFilters={setFilters} />
                 <FilterBubbles filters={filters} setFilters={setFilters} />
+                <FilterVulnerability filters={filters} setFilters={setFilters} />
             </div>
 
             

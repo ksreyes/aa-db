@@ -3,6 +3,7 @@ import './App.css'
 import Header from './components/Header.jsx'
 import Filters from './components/Filters.jsx'
 import MapView from './components/MapView.jsx'
+import LegendRaster from './components/LegendRaster.jsx'
 
 function App() {
 
@@ -11,9 +12,10 @@ function App() {
         indicator: 1,
         lead: 1,
         idp: false,
-        return: false
+        return: false,
+        vulnerability: 1
     });
-    
+
     return (
         <>
             <Header />
@@ -22,6 +24,7 @@ function App() {
                 setFilters={setFilters} 
             />
             <MapView filters={filters} />
+            <LegendRaster filters={filters} title="Severity level" />
         </>
     )
 }
