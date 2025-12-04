@@ -1,0 +1,102 @@
+{
+    "1": { 
+        "1": {
+            "label": "Abnormally dry", 
+            "color": "hsla(40, 100%, 90%, 0.50)" 
+        },
+        "2": {
+            "label": "Moderate drought", 
+            "color": "hsla(31, 100%, 78%, 0.50)" 
+        },
+        "3": {
+            "label": "Severe drought", 
+            "color": "hsla(12, 100%, 72%, 0.50)" 
+        },
+        "4": {
+            "label": "Extreme drought", 
+            "color": "hsla(351, 80%, 60%, 0.60)" 
+        },
+        "5": {
+            "label": "Exceptional drought", 
+            "color": "hsla(357, 69%, 49%, 0.80)" 
+        }
+    },
+    "2": { 
+        "1": {
+            "label": "1.5-year flood", 
+            "color": "hsla(40, 100%, 90%, 0.50)" 
+        },
+        "2": {
+            "label": "2-year flood", 
+            "color": "hsla(31, 100%, 78%, 0.50)" 
+        },
+        "3": {
+            "label": "5-year flood", 
+            "color": "hsla(12, 100%, 72%, 0.50)" 
+        },
+        "4": {
+            "label": "10-year flood", 
+            "color": "hsla(15, 100%, 62%, 0.60)" 
+        },
+        "5": {
+            "label": "20-year flood", 
+            "color": "hsla(351, 80%, 60%, 0.60)" 
+        },
+        "6": {
+            "label": "50-year flood", 
+            "color": "hsla(357, 69%, 49%, 0.70)" 
+        },
+        "7": {
+            "label": "100-year flood", 
+            "color": "hsla(357, 69%, 49%, 0.75)" 
+        },
+        "8": {
+            "label": "200-year flood", 
+            "color": "hsla(357, 69%, 49%, 0.80)" 
+        },
+        "9": {
+            "label": "500-year flood", 
+            "color": "hsla(357, 69%, 40%, 0.85)" 
+        }
+    },
+    "3": { 
+        "1": {
+            "label": "Gale", 
+            "color": "hsla(40, 100%, 90%, 0.50)" 
+        },
+        "2": {
+            "label": "Strong gale", 
+            "color": "hsla(31, 100%, 78%, 0.50)" 
+        },
+        "3": {
+            "label": "Storm", 
+            "color": "hsla(12, 100%, 72%, 0.50)" 
+        },
+        "4": {
+            "label": "Violent storm", 
+            "color": "hsla(351, 80%, 60%, 0.60)" 
+        },
+        "5": {
+            "label": "Hurricane", 
+            "color": "hsla(357, 69%, 49%, 0.80)" 
+        }
+    },
+    "4": { 
+        "1": {
+            "label": "Moderate risk", 
+            "color": "hsla(31, 100%, 78%, 0.50)" 
+        },
+        "2": {
+            "label": "High risk", 
+            "color": "hsla(12, 100%, 72%, 0.50)" 
+        },
+        "3": {
+            "label": "Very high risk", 
+            "color": "hsla(351, 80%, 60%, 0.60)" 
+        },
+        "4": {
+            "label": "Extreme risk", 
+            "color": "hsla(357, 69%, 49%, 0.80)" 
+        }
+    }
+}

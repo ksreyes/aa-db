@@ -1,5 +1,6 @@
 import computeGridResolution from './GridResolution.jsx';
 import countryData from "../countryData.json";
+import legendData from "../legendData.json";
 
 export default function createRasterCanvas(points, filters) {
 
@@ -50,20 +51,11 @@ export default function createRasterCanvas(points, filters) {
     const cellWidth  = width / ((maxLon - minLon) / latSpacingDeg);
     const cellHeight = height / ((maxLat - minLat) / latSpacingDeg);
 
-    const fills = {
-        1: "hsla(40, 100%, 90%, 0.50)",
-        2: "hsla(31, 100%, 78%, 0.50)",
-        3: "hsla(12, 100%, 72%, 0.50)",
-        4: "hsla(15, 100%, 62%, 0.60)",
-        5: "hsla(351, 80%, 60%, 0.60)",
-        6: "hsla(357, 69%, 49%, 0.70)",
-        7: "hsla(357, 69%, 49%, 0.75)",
-        8: "hsla(357, 69%, 49%, 0.80)",
-        9: "hsla(357, 69%, 40%, 0.85)"
-    };
+    const fills = legendData[indicator];
+    console.log(fills["1"].color)
 
     function fillMap(v) {
-        return fills[v] || "rgba(0,0,0,0)";
+        return fills[v].color || "rgba(0,0,0,0)";
     }
 
     filteredPoints.forEach(p => {
