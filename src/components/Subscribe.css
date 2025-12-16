@@ -1,0 +1,65 @@
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 400px;
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    top: 8px;
+    right: 12px;
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.subscribe {
+    
+    & .subscribe-title {
+        font-weight: 700;
+    }
+
+    & .severity-filter {
+        & .severity-number {
+            margin-left: 10px;
+            margin-right: 2px;
+            font-size: .9rem;
+            color: var(--gray3);
+        }
+    }
+
+    & .email-field {
+        display: flex;
+        flex-direction: row;
+        margin-top: 20px;
+        justify-content: center;
+
+        & input {
+            width: 200px;
+        }
+    
+        & button {
+            background-color: var(--blue1);
+            border-radius: 2px;
+            padding: 4px 8px;
+            margin-left: 10px;
+            color: white;
+            font-size: .85rem;
+            border: none;
+        }
+    }
+}
