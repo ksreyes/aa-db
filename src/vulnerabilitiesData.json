@@ -1,14 +1,31 @@
 {
     "1": {
-        "label": "Water and sanitation"
+        "label": "Age and sex"
     },
     "2": {
-        "label": "Shelter"
+        "label": "Livelihood"
     },
     "3": {
-        "label": "Food security"
+        "label": "Income"
     },
     "4": {
-        "label": "Livelihoods"
+        "label": "Education"
+    },
+    "5": {
+        "label": "Water and sanitation"
+    },
+    "6": {
+        "label": "Critical infrastructure"
+    },
+    "7": {
+        "label": "Shelter material"
     }
 }
+
+
+
+
+
+
+
+
