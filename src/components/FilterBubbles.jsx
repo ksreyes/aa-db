@@ -25,14 +25,14 @@ export default function FilterBubbles({ filters, setFilters }) {
                     IDPs
                 </label>
 
-                <label>
+                {/* <label>
                     <input
                         type="checkbox"
                         checked={filters.return}
                         onChange={() => toggle("return")}
                     />
                     returnees
-                </label>
+                </label> */}
             </div>
 
         </div>
