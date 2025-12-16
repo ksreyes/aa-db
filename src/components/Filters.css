@@ -19,6 +19,18 @@
     }
 }
 
+.subscribe-filter {
+    background-color: var(--gray5);
+    padding: 8px 8px 12px 8px;
+    margin: 10px 0;
+    border-radius: 2px;
+    min-width: 175px;
+
+    & > * {
+        width: 100%;
+    }
+}
+
 .filter-label {
     font-size: .75rem;
     font-weight: normal;
